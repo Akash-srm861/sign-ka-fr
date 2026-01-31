@@ -25,7 +25,7 @@ class AuthManager {
     
     async signup(username, email, password) {
         try {
-            const response = await fetch('http://localhost:5000/api/auth/signup', {
+            const response = await fetch(API_ENDPOINTS.AUTH.SIGNUP, {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json'
@@ -56,7 +56,7 @@ class AuthManager {
     
     async login(email, password) {
         try {
-            const response = await fetch('http://localhost:5000/api/auth/login', {
+            const response = await fetch(API_ENDPOINTS.AUTH.LOGIN, {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json'
