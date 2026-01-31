@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Practice - Sign Language Learning App</title>
+    
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/responsive.css">
+    <link rel="stylesheet" href="../css/practice.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="container">
+            <div class="nav-brand">
+                <a href="../index.html" style="color: inherit; display: flex; align-items: center; gap: 0.5rem;">
+                    <i class="fas fa-hands"></i>
+                    <span>Sign Language</span>
+                </a>
+            </div>
+            <div class="nav-actions">
+                <a href="../index.html" class="btn btn-outline">
+                    <i class="fas fa-home"></i> Home
+                </a>
+                <div class="user-menu" id="user-menu">
+                    <button class="user-avatar" id="user-avatar">
+                        <i class="fas fa-user-circle"></i>
+                        <span id="username">User</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <div class="practice-container">
+        <!-- Sidebar -->
+        <aside class="practice-sidebar">
+            <div class="module-info">
+                <h3 id="module-title">Loading...</h3>
+                <p id="module-description">Please wait...</p>
+            </div>
+            
+            <div class="sign-list" id="sign-list">
+                <!-- Signs will be loaded here -->
+            </div>
+            
+            <div class="session-stats">
+                <h4>Session Stats</h4>
+                <div class="stat-item">
+                    <span>Attempts:</span>
+                    <strong id="session-attempts">0</strong>
+                </div>
+                <div class="stat-item">
+                    <span>Correct:</span>
+                    <strong id="session-correct">0</strong>
+                </div>
+                <div class="stat-item">
+                    <span>Accuracy:</span>
+                    <strong id="session-accuracy">0%</strong>
+                </div>
+            </div>
+            
+            <button class="btn btn-danger btn-block" id="end-session-btn">
+                <i class="fas fa-stop"></i> End Session
+            </button>
+        </aside>
+
+        <!-- Main Practice Area -->
+        <main class="practice-main">
+            <!-- Target Sign Display -->
+            <div class="target-sign">
+                <h2>Practice Sign:</h2>
+                <div class="sign-display" id="target-sign-display">
+                    <span class="sign-letter">A</span>
+                </div>
+                <p class="sign-hint" id="sign-hint">Make a fist with your thumb resting on the side</p>
+            </div>
+
+            <!-- Video Feed -->
+            <div class="video-container">
+                <video id="webcam" autoplay playsinline></video>
+                <canvas id="canvas-overlay"></canvas>
+                
+                <!-- Feedback Overlay -->
+                <div class="feedback-overlay" id="feedback-overlay">
+                    <div class="feedback-content">
+                        <i class="feedback-icon"></i>
+                        <span class="feedback-text"></span>
+                    </div>
+                </div>
+                
+                <!-- Controls -->
+                <div class="video-controls">
+                    <button class="btn btn-primary" id="start-camera-btn">
+                        <i class="fas fa-video"></i> Start Camera
+                    </button>
+                    <button class="btn btn-danger" id="stop-camera-btn" style="display: none;">
+                        <i class="fas fa-video-slash"></i> Stop Camera
+                    </button>
+                    <button class="btn btn-success" id="check-sign-btn" style="display: none;">
+                        <i class="fas fa-check"></i> Check Sign
+                    </button>
+                </div>
+            </div>
+
+            <!-- Detection Info -->
+            <div class="detection-info" id="detection-info">
+                <div class="info-item">
+                    <span>Hands Detected:</span>
+                    <strong id="hands-detected">0</strong>
+                </div>
+                <div class="info-item">
+                    <span>Confidence:</span>
+                    <strong id="confidence">0%</strong>
+                </div>
+                <div class="info-item">
+                    <span>Prediction:</span>
+                    <strong id="prediction">-</strong>
+                </div>
+            </div>
+
+            <!-- Action Buttons -->
+            <div class="action-buttons">
+                <button class="btn btn-outline" id="skip-sign-btn">
+                    <i class="fas fa-forward"></i> Skip Sign
+                </button>
+                <button class="btn btn-outline" id="help-btn">
+                    <i class="fas fa-question-circle"></i> Get Help
+                </button>
+            </div>
+        </main>
+
+        <!-- Chatbot Panel -->
+        <aside class="chatbot-panel" id="chatbot-panel">
+            <div class="chatbot-header">
+                <h4><i class="fas fa-robot"></i> Learning Assistant</h4>
+                <button class="btn-icon" id="toggle-chatbot">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            
+            <div class="chatbot-messages" id="chatbot-messages">
+                <div class="chat-message bot">
+                    <p>Hi! I'm your learning assistant. Ask me anything about sign language! 👋</p>
+                </div>
+            </div>
+            
+            <form class="chatbot-input" id="chatbot-form">
+                <input type="text" id="chatbot-input" placeholder="Ask a question..." autocomplete="off">
+                <button type="submit" class="btn btn-primary">
+                    <i class="fas fa-paper-plane"></i>
+                </button>
+            </form>
+        </aside>
+    </div>
+
+    <!-- Floating Chatbot Button -->
+    <button class="floating-chat-btn" id="floating-chat-btn">
+        <i class="fas fa-robot"></i>
+    </button>
+
+    <!-- Loading Overlay -->
+    <div class="loading-overlay" id="loading-overlay">
+        <div class="spinner"></div>
+    </div>
+
+    <!-- Toast Notification -->
+    <div class="toast" id="toast"></div>
+
+    <script src="../js/config.js"></script>
+    <script src="../js/auth.js"></script>
+    <script src="../js/ui.js"></script>
+    <script src="../js/practice.js"></script>
+</body>
+</html>

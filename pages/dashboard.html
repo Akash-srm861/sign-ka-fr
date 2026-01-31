@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard - Sign Language Learning App</title>
+    
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/responsive.css">
+    <link rel="stylesheet" href="../css/dashboard.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="container">
+            <div class="nav-brand">
+                <a href="../index.html" style="color: inherit; display: flex; align-items: center; gap: 0.5rem;">
+                    <i class="fas fa-hands"></i>
+                    <span>Sign Language</span>
+                </a>
+            </div>
+            <div class="nav-actions">
+                <a href="../index.html" class="btn btn-outline">
+                    <i class="fas fa-home"></i> Home
+                </a>
+                <div class="user-menu" id="user-menu">
+                    <button class="user-avatar" id="user-avatar">
+                        <i class="fas fa-user-circle"></i>
+                        <span id="username">User</span>
+                    </button>
+                    <div class="dropdown-menu" id="dropdown-menu">
+                        <a href="#" id="logout-link"><i class="fas fa-sign-out-alt"></i> Logout</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <div class="dashboard-container">
+        <div class="container">
+            <div class="dashboard-header">
+                <h1>My Progress Dashboard</h1>
+                <p>Track your sign language learning journey</p>
+            </div>
+
+            <!-- Stats Overview -->
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <div class="stat-icon" style="background: linear-gradient(135deg, #667eea, #764ba2);">
+                        <i class="fas fa-fire"></i>
+                    </div>
+                    <div class="stat-content">
+                        <span class="stat-label">Learning Streak</span>
+                        <h2 class="stat-value" id="streak-days">0</h2>
+                        <span class="stat-sublabel">days in a row</span>
+                    </div>
+                </div>
+
+                <div class="stat-card">
+                    <div class="stat-icon" style="background: linear-gradient(135deg, #f093fb, #f5576c);">
+                        <i class="fas fa-trophy"></i>
+                    </div>
+                    <div class="stat-content">
+                        <span class="stat-label">Signs Mastered</span>
+                        <h2 class="stat-value" id="mastered-signs">0</h2>
+                        <span class="stat-sublabel">out of 86 total</span>
+                    </div>
+                </div>
+
+                <div class="stat-card">
+                    <div class="stat-icon" style="background: linear-gradient(135deg, #4facfe, #00f2fe);">
+                        <i class="fas fa-clock"></i>
+                    </div>
+                    <div class="stat-content">
+                        <span class="stat-label">Practice Time</span>
+                        <h2 class="stat-value" id="practice-time">0</h2>
+                        <span class="stat-sublabel">minutes this week</span>
+                    </div>
+                </div>
+
+                <div class="stat-card">
+                    <div class="stat-icon" style="background: linear-gradient(135deg, #43e97b, #38f9d7);">
+                        <i class="fas fa-chart-line"></i>
+                    </div>
+                    <div class="stat-content">
+                        <span class="stat-label">Overall Accuracy</span>
+                        <h2 class="stat-value" id="overall-accuracy">0%</h2>
+                        <span class="stat-sublabel">across all signs</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Progress by Category -->
+            <div class="section-card">
+                <h3><i class="fas fa-graduation-cap"></i> Progress by Category</h3>
+                <div class="category-progress">
+                    <div class="category-item">
+                        <div class="category-header">
+                            <span class="category-name">
+                                <i class="fas fa-font"></i> Alphabets
+                            </span>
+                            <span class="category-percentage" id="alphabets-percentage">0%</span>
+                        </div>
+                        <div class="progress-bar">
+                            <div class="progress-fill" id="alphabets-progress" style="width: 0%"></div>
+                        </div>
+                        <div class="category-stats">
+                            <span id="alphabets-practiced">0</span> / <span>26</span> signs practiced
+                        </div>
+                    </div>
+
+                    <div class="category-item">
+                        <div class="category-header">
+                            <span class="category-name">
+                                <i class="fas fa-hashtag"></i> Numbers
+                            </span>
+                            <span class="category-percentage" id="numbers-percentage">0%</span>
+                        </div>
+                        <div class="progress-bar">
+                            <div class="progress-fill" id="numbers-progress" style="width: 0%"></div>
+                        </div>
+                        <div class="category-stats">
+                            <span id="numbers-practiced">0</span> / <span>10</span> signs practiced
+                        </div>
+                    </div>
+
+                    <div class="category-item">
+                        <div class="category-header">
+                            <span class="category-name">
+                                <i class="fas fa-comments"></i> Common Words
+                            </span>
+                            <span class="category-percentage" id="words-percentage">0%</span>
+                        </div>
+                        <div class="progress-bar">
+                            <div class="progress-fill" id="words-progress" style="width: 0%"></div>
+                        </div>
+                        <div class="category-stats">
+                            <span id="words-practiced">0</span> / <span>50</span> signs practiced
+                        </div>
+                    </div>
+                </div>
+                <div class="category-actions">
+                    <a href="practice.html?module=alphabets" class="btn btn-outline">
+                        <i class="fas fa-play"></i> Practice Alphabets
+                    </a>
+                    <a href="practice.html?module=numbers" class="btn btn-outline">
+                        <i class="fas fa-play"></i> Practice Numbers
+                    </a>
+                    <a href="practice.html?module=words" class="btn btn-outline">
+                        <i class="fas fa-play"></i> Practice Words
+                    </a>
+                </div>
+            </div>
+
+            <!-- Recent Sessions -->
+            <div class="section-card">
+                <h3><i class="fas fa-history"></i> Recent Practice Sessions</h3>
+                <div class="sessions-list" id="sessions-list">
+                    <div class="empty-state">
+                        <i class="fas fa-inbox"></i>
+                        <p>No practice sessions yet</p>
+                        <a href="../index.html#practice" class="btn btn-primary">Start Learning</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Top Signs -->
+            <div class="section-card">
+                <h3><i class="fas fa-star"></i> Your Top Signs</h3>
+                <div class="top-signs-grid" id="top-signs-grid">
+                    <div class="empty-state">
+                        <i class="fas fa-hand-paper"></i>
+                        <p>Start practicing to see your best signs!</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="loading-overlay" id="loading-overlay">
+        <div class="spinner"></div>
+    </div>
+
+    <div class="toast" id="toast"></div>
+
+    <script src="../js/config.js"></script>
+    <script src="../js/auth.js"></script>
+    <script src="../js/ui.js"></script>
+    <script src="../js/dashboard.js"></script>
+</body>
+</html>

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>ASL Image Generator</title>
+    <style>
+        canvas { border: 1px solid #ccc; margin: 10px; }
+        body { font-family: Arial; padding: 20px; }
+    </style>
+</head>
+<body>
+    <h1>ASL Alphabet Image Generator</h1>
+    <p>Right-click each image and "Save image as..." to download</p>
+    <div id="images"></div>
+    
+    <script>
+        const letters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'.split('');
+        const container = document.getElementById('images');
+        
+        letters.forEach(letter => {
+            const canvas = document.createElement('canvas');
+            canvas.width = 300;
+            canvas.height = 400;
+            const ctx = canvas.getContext('2d');
+            
+            // Gradient background
+            const gradient = ctx.createLinearGradient(0, 0, 0, 400);
+            gradient.addColorStop(0, '#4A90E2');
+            gradient.addColorStop(1, '#357ABD');
+            ctx.fillStyle = gradient;
+            ctx.fillRect(0, 0, 300, 400);
+            
+            // White letter
+            ctx.fillStyle = 'white';
+            ctx.font = 'bold 150px Arial';
+            ctx.textAlign = 'center';
+            ctx.textBaseline = 'middle';
+            ctx.fillText(letter, 150, 180);
+            
+            // Hand icon
+            ctx.font = '80px Arial';
+            ctx.fillText('✋', 150, 320);
+            
+            // Label
+            const label = document.createElement('div');
+            label.textContent = `${letter.toLowerCase()}.png`;
+            label.style.textAlign = 'center';
+            
+            const wrapper = document.createElement('div');
+            wrapper.style.display = 'inline-block';
+            wrapper.appendChild(canvas);
+            wrapper.appendChild(label);
+            container.appendChild(wrapper);
+        });
+    </script>
+</body>
+</html>

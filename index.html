@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Learn sign language with AI-powered hand gesture recognition">
+    <title>Sign Language Learning App</title>
+    
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/responsive.css">
+    
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar" id="navbar">
+        <div class="container">
+            <div class="nav-brand">
+                <i class="fas fa-hands"></i>
+                <span>Sign Language</span>
+            </div>
+            
+            <ul class="nav-menu" id="nav-menu">
+                <li><a href="#home" class="nav-link active">Home</a></li>
+                <li><a href="#features" class="nav-link">Features</a></li>
+                <li><a href="#practice" class="nav-link">Practice</a></li>
+                <li><a href="#about" class="nav-link">About</a></li>
+            </ul>
+            
+            <div class="nav-actions">
+                <button class="btn btn-outline" id="login-btn">Login</button>
+                <button class="btn btn-primary" id="signup-btn">Sign Up</button>
+                
+                <!-- User menu (hidden initially) -->
+                <div class="user-menu" id="user-menu" style="display: none;">
+                    <button class="user-avatar" id="user-avatar">
+                        <i class="fas fa-user-circle"></i>
+                        <span id="username">User</span>
+                    </button>
+                    <div class="dropdown-menu" id="dropdown-menu">
+                        <a href="#dashboard" id="dashboard-link"><i class="fas fa-chart-line"></i> Dashboard</a>
+                        <a href="#profile" id="profile-link"><i class="fas fa-user-edit"></i> Profile</a>
+                        <a href="#" id="logout-link"><i class="fas fa-sign-out-alt"></i> Logout</a>
+                    </div>
+                </div>
+            </div>
+            
+            <button class="nav-toggle" id="nav-toggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="container">
+            <div class="hero-content">
+                <h1 class="hero-title">
+                    Learn Sign Language with
+                    <span class="gradient-text">AI Technology</span>
+                </h1>
+                <p class="hero-subtitle">
+                    Master sign language through real-time hand gesture recognition, 
+                    personalized feedback, and AI-powered learning assistance.
+                </p>
+                <div class="hero-actions">
+                    <button class="btn btn-large btn-primary" id="get-started-btn">
+                        <i class="fas fa-play"></i> Get Started
+                    </button>
+                    <button class="btn btn-large btn-outline" id="learn-more-btn">
+                        <i class="fas fa-info-circle"></i> Learn More
+                    </button>
+                </div>
+                <div class="hero-stats">
+                    <div class="stat">
+                        <strong>26</strong>
+                        <span>Alphabets</span>
+                    </div>
+                    <div class="stat">
+                        <strong>10</strong>
+                        <span>Numbers</span>
+                    </div>
+                    <div class="stat">
+                        <strong>50+</strong>
+                        <span>Common Words</span>
+                    </div>
+                </div>
+            </div>
+            <div class="hero-illustration">
+                <div class="illustration-card">
+                    <i class="fas fa-hand-paper"></i>
+                    <p>Real-time Detection</p>
+                </div>
+                <div class="illustration-card">
+                    <i class="fas fa-brain"></i>
+                    <p>AI-Powered Learning</p>
+                </div>
+                <div class="illustration-card">
+                    <i class="fas fa-chart-line"></i>
+                    <p>Progress Tracking</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="features" id="features">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Powerful Features</h2>
+                <p class="section-subtitle">Everything you need to master sign language</p>
+            </div>
+            
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-video"></i>
+                    </div>
+                    <h3>Real-time Webcam</h3>
+                    <p>Practice with live video feed and instant hand detection</p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-hand-sparkles"></i>
+                    </div>
+                    <h3>Hand Tracking</h3>
+                    <p>Advanced MediaPipe technology tracks 21 hand landmarks</p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-check-circle"></i>
+                    </div>
+                    <h3>Live Feedback</h3>
+                    <p>Get instant feedback on your sign accuracy</p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-graduation-cap"></i>
+                    </div>
+                    <h3>Learning Modules</h3>
+                    <p>Structured lessons for alphabets, numbers, and phrases</p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-robot"></i>
+                    </div>
+                    <h3>AI Chatbot</h3>
+                    <p>24/7 learning assistant to answer your questions</p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-trophy"></i>
+                    </div>
+                    <h3>Progress Tracking</h3>
+                    <p>Monitor your learning journey with detailed statistics</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Practice Section -->
+    <section class="practice" id="practice">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Start Practicing</h2>
+                <p class="section-subtitle">Choose a module to begin your learning journey</p>
+            </div>
+            
+            <div class="modules-grid">
+                <div class="module-card" data-module="alphabets">
+                    <div class="module-icon">
+                        <i class="fas fa-font"></i>
+                    </div>
+                    <h3>Alphabets</h3>
+                    <p>Learn A-Z fingerspelling</p>
+                    <div class="module-progress">
+                        <div class="progress-bar">
+                            <div class="progress-fill" style="width: 0%"></div>
+                        </div>
+                        <span class="progress-text">0% Complete</span>
+                    </div>
+                    <button class="btn btn-primary module-btn">Start Learning</button>
+                </div>
+                
+                <div class="module-card" data-module="numbers">
+                    <div class="module-icon">
+                        <i class="fas fa-hashtag"></i>
+                    </div>
+                    <h3>Numbers</h3>
+                    <p>Master 0-9 counting</p>
+                    <div class="module-progress">
+                        <div class="progress-bar">
+                            <div class="progress-fill" style="width: 0%"></div>
+                        </div>
+                        <span class="progress-text">0% Complete</span>
+                    </div>
+                    <button class="btn btn-primary module-btn">Start Learning</button>
+                </div>
+                
+                <div class="module-card" data-module="words">
+                    <div class="module-icon">
+                        <i class="fas fa-comments"></i>
+                    </div>
+                    <h3>Common Words</h3>
+                    <p>Practice everyday phrases</p>
+                    <div class="module-progress">
+                        <div class="progress-bar">
+                            <div class="progress-fill" style="width: 0%"></div>
+                        </div>
+                        <span class="progress-text">0% Complete</span>
+                    </div>
+                    <button class="btn btn-primary module-btn">Start Learning</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="about" id="about">
+        <div class="container">
+            <div class="about-content">
+                <h2>About This Project</h2>
+                <p>
+                    This Sign Language Learning Application uses cutting-edge AI and computer vision 
+                    technology to make sign language accessible to everyone. Built with MediaPipe for 
+                    hand tracking, machine learning models for classification, and a user-friendly 
+                    interface, we're making language learning more interactive and engaging.
+                </p>
+                <div class="tech-stack">
+                    <h3>Built With</h3>
+                    <div class="tech-badges">
+                        <span class="badge">HTML5</span>
+                        <span class="badge">CSS3</span>
+                        <span class="badge">JavaScript</span>
+                        <span class="badge">Python</span>
+                        <span class="badge">Flask</span>
+                        <span class="badge">MediaPipe</span>
+                        <span class="badge">OpenCV</span>
+                        <span class="badge">Scikit-learn</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3><i class="fas fa-hands"></i> Sign Language App</h3>
+                    <p>Making sign language accessible through AI technology.</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#features">Features</a></li>
+                        <li><a href="#practice">Practice</a></li>
+                        <li><a href="#about">About</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Resources</h4>
+                    <ul>
+                        <li><a href="#">API Documentation</a></li>
+                        <li><a href="#">Learning Guide</a></li>
+                        <li><a href="#">FAQ</a></li>
+                        <li><a href="#">Support</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Connect</h4>
+                    <div class="social-links">
+                        <a href="#" aria-label="GitHub"><i class="fab fa-github"></i></a>
+                        <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                        <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 Sign Language Learning App. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Modals -->
+    <!-- Login Modal -->
+    <div class="modal" id="login-modal">
+        <div class="modal-content">
+            <span class="modal-close">&times;</span>
+            <h2>Login</h2>
+            <form id="login-form">
+                <div class="form-group">
+                    <label for="login-email">Email</label>
+                    <input type="email" id="login-email" required>
+                </div>
+                <div class="form-group">
+                    <label for="login-password">Password</label>
+                    <input type="password" id="login-password" required>
+                </div>
+                <div class="form-error" id="login-error"></div>
+                <button type="submit" class="btn btn-primary btn-block">Login</button>
+            </form>
+            <p class="modal-footer">
+                Don't have an account? <a href="#" id="show-signup">Sign up</a>
+            </p>
+        </div>
+    </div>
+
+    <!-- Signup Modal -->
+    <div class="modal" id="signup-modal">
+        <div class="modal-content">
+            <span class="modal-close">&times;</span>
+            <h2>Sign Up</h2>
+            <form id="signup-form">
+                <div class="form-group">
+                    <label for="signup-username">Username</label>
+                    <input type="text" id="signup-username" required minlength="3">
+                </div>
+                <div class="form-group">
+                    <label for="signup-email">Email</label>
+                    <input type="email" id="signup-email" required>
+                </div>
+                <div class="form-group">
+                    <label for="signup-password">Password</label>
+                    <input type="password" id="signup-password" required minlength="8">
+                </div>
+                <div class="form-error" id="signup-error"></div>
+                <button type="submit" class="btn btn-primary btn-block">Sign Up</button>
+            </form>
+            <p class="modal-footer">
+                Already have an account? <a href="#" id="show-login">Login</a>
+            </p>
+        </div>
+    </div>
+
+    <!-- Loading Spinner -->
+    <div class="loading-overlay" id="loading-overlay">
+        <div class="spinner"></div>
+    </div>
+
+    <!-- Toast Notification -->
+    <div class="toast" id="toast"></div>
+
+    <!-- Supabase Library -->
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    
+    <!-- Scripts -->
+    <script src="js/config.js"></script>
+    <script src="js/auth.js"></script>
+    <script src="js/ui.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>
